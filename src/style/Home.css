@@ -1,0 +1,40 @@
+.home{
+    position: relative;
+    width: 60%;
+    margin: 0 auto;
+    padding: 10px 5px 120px 5px;
+    box-sizing: border-box;
+}
+.home-main-li{
+    padding: 10px 0 10px 0;
+    border-bottom: 1px solid #f3f3f3;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.music-li-name{
+    width: 60%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.music-li-option{
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.music-li-option div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+.music-li-option svg{
+    cursor: pointer;
+}
+.stop-overflow{
+    overflow:hidden;
+}

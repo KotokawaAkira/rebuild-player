@@ -1,38 +1,245 @@
-.App {
-  text-align: center;
+.bottom-bar{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background-color: rgba(255, 255, 255,0.8);
+    transition: all .5s ease;
+}
+.bottom-bar-active{
+    background-color: rgba(255, 255, 255,0.6);
+}
+.player-out{
+    width: 60%;
+    margin: 0 auto;
+    padding: 10px 0 10px 0;
+}
+.player{
+    display: flex;
+    align-items: center;
+    height: 30px;
+}
+.progress{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    flex: 1;
+    position: relative;
+    box-sizing: border-box;
+    padding-right: 10px;
+}
+.progress-out{
+    width: 100%;
+    height: 5px;
+    background-color: #c1c2c3;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: height .3s ease;
+}
+.progress-out:hover{
+    height: 15px;
+}
+.progress-in{
+    height: 100%;
+    width: 0;
+    background-color: #0b0b0b;
+    border-radius: 10px;
+}
+.indicator{
+    margin: 3px 0 3px 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left:0;
+    height: 24px;
+    width: 24px;
+    background-color: #f3f3f3;
+    border-radius: 12px;
+    transform: translate(-50%,0);
+    opacity: 0.0;
+    transition: opacity .3s ease;
+    z-index: 5;
+    cursor: pointer;
+}
+.progress-out:hover + .indicator{
+    opacity: 1.0;
+}
+.time{
+    display: flex;
+    padding: 0 15px 0 15px;
+    box-sizing: border-box;
+}
+.divide{
+    margin: 0 5px 0 5px;
+}
+.controls{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.play-controls{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 200px;
+}
+.pic-container{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    box-sizing: border-box;
+    border: 1px solid rgb(0,0,0,0.3);
+    overflow: hidden;
+    margin-right: 10px;
+}
+.pic-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.music-name{
+    width: 200px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.music-info{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.play-controls-button{
+    cursor: pointer;
+}
+.music-list{
+    display: flex;
+    align-items: center;
+}
+.music-list div{
+    cursor: pointer;
+}
+.controls-volume{
+    display: flex;
+    align-items: center;
+}
+.volume-icon{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.volume-progress{
+    width: 100px;
+    height: 6px;
+    background-color: #c1c2c3;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: height .3s ease;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.controls-volume:hover .volume-progress{
+    height: 16px;
+}
+.volume-progress-inner{
+    height: 100%;
+    background-color: #0b0b0b;
+}
+.pop-li{
+    padding: 5px 0 5px 0;
+    display: flex;
+}
+.pop-li-name{
+    cursor: pointer;
+    width: 90%;
+    min-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.pop-li-name:hover{
+    color: #9ac8e2;
+    transition: color .3s ease;
+    user-select: none;
+}
+.remove{
+    flex: 1;
+    margin-left: 10px;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.pop-ul{
+    padding: 5px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+.pop-ul::-webkit-scrollbar-button{
+    opacity: 0.0;
+}
+.pop-ul::-webkit-scrollbar{
+    width: 5px;
+}
+.pop-ul::-webkit-scrollbar-thumb{
+    background-image: linear-gradient(#24252c, #8d8d8d);
+    border-radius: 3px;
+}
+.playing{
+    font-weight: bolder;
+    color: #9ac8e2;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.remove svg{
+    transition: fill .3s ease;
+}
+.remove:hover svg{
+    fill: #d05b4e;
+}
+.hide{
+    display: none;
+}
+.small-screen{
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.t-drawer__body .pop-ul{
+    overflow: unset !important;
+}
+@media screen and (max-width: 450px){
+    .pic-container{
+        display: none;
+    }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@media screen and (max-width: 1000px){
+    .player-out{
+        width: 80%;
+    }
+    .big-screen{
+        display: none;
+    }
+    .small-screen{
+        display: flex;
+    }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@media screen and (max-width: 700px){
+    .player-out{
+        width: 100%;
+    }
+    .home{
+        width: 100% !important;
+    }
+    .home-main-ul{
+        padding: 0 5px 0 5px;
+    }
+    .music-name{
+        width: 100px;
+    }
+    .volume-progress{
+        width: 80px;
+    }
 }

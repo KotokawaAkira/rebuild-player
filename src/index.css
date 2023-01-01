@@ -1,13 +1,22 @@
-body {
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+img{
+  display: block;
+}
+body {
+  font-family: LXGW;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
 }
-
+@font-face {
+  font-family: "LXGW";
+  src: url("/src/font/LXGWWenKai-Regular.ttf");
+}
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
 }
